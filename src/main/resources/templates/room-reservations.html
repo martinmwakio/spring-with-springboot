@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Room Reservations</title>
+</head>
+<body>
+<h1>Welcome to the reservations page</h1>
+<table>
+    <tr>
+        <td>Room</td>
+        <td>Room Number</td>
+        <td>Guest</td>
+    </tr>
+    <tr th:each="row: ${roomReservations}">
+        <td th:text="${row.roomName}">Room Name</td>
+        <td th:text="${row.roomNumber}">Room Number</td>
+        <td th:text="${row.firstName} == null ? 'Vacant' : ${row.lastName}+' '+${row.firstName}">
+            Guest Name
+        </td>
+    </tr>
+</table>
+</body>
+</html>
